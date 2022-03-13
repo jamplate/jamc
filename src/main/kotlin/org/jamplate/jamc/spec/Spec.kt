@@ -27,8 +27,8 @@ abstract class Spec(
      *
      * @since 0.4.0 ~2022.03.13
      */
-    val qualifier: String
-) : Iterable<Spec> {
+    val qualifier: String,
+
     // Lexical
 
     /**
@@ -38,7 +38,7 @@ abstract class Spec(
      * @since 0.4.0 ~2022.03.13
      */
     // Tree<Token> -> Set<Tree<Token>>
-    open val lexer: Lexer = Lexer
+    open val lexer: Lexer = Lexer,
 
     /**
      * A formatter to be used when converting
@@ -47,7 +47,7 @@ abstract class Spec(
      * @since 0.4.0 ~2022.03.13
      */
     // Tree<Token> -> CharSequence
-    open val formatter: Formatter = Formatter
+    open val formatter: Formatter = Formatter,
 
     // IR
 
@@ -56,7 +56,7 @@ abstract class Spec(
      * tokens to mirrors (IR).
      */
     // Tree<Token> -> Mirror
-    open val parser: Parser = Parser
+    open val parser: Parser = Parser,
 
     /**
      * A generator to be used when generating
@@ -65,7 +65,7 @@ abstract class Spec(
      * @since 0.4.0 ~2022.03.13
      */
     // Mirror -> Tree<Token>
-    open val generator: Generator = Generator
+    open val generator: Generator = Generator,
 
     // Translation
 
@@ -75,4 +75,4 @@ abstract class Spec(
      */
     // Mirror -> Instruction
     open val translator: Translator = Translator
-}
+)
